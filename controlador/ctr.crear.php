@@ -14,7 +14,7 @@ $existencias = isset($_POST['existencias'])?$_POST['existencias']:"";
 $img = isset($_FILE['img'])?$_POST['img']:"";
 $nombreImg = $_FILES['img']['name'];
 $rutaImg = $_FILES['img']['tmp_name'];
-$destino = "C:\wamp64\www\DesafioPractico\server\img/$nombreImg";
+$destino = "../server/img/$nombreImg";
 
 if(empty($codigo) || empty($nombre) || empty($descripcion)){
     header('location: ../vista/crearProducto.php?error_log=1');
