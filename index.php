@@ -41,6 +41,5 @@
         </div>
         <!-- Copyright -->
       </footer>
-      <script src="js/formulariosScript.js"></script>
 </body>
 </html>
