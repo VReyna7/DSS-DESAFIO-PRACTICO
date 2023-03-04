@@ -1,0 +1,67 @@
+
+.footer{
+    position:absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+
+main{
+    height: 100vh;
+}
+
+.Selec_Logeo{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.opciones1{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+    background-color: black;
+}
+
+img{
+    width: 230px;
+    height: 200px;
+    margin-top: 20px;
+}
+
+
+.opciones2{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.opciones_Button{
+    font-size: 18px;
+}
+
+.formAdmin{ 
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: #343a40;
+    border-radius: 16px;
+}
+
+.formCliente{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+}
+
+input{
+    margin-bottom: 20px;
+    padding: 6px;
+}
