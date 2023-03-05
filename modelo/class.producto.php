@@ -109,7 +109,6 @@ class Producto{
             $string .= "</div>";
             $string .= "<div class=\"modal-footer\">";
             $string .= "<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>";
-            $string .= "<button type=\"button\" class=\"btn btn-primary\"></button>";
             $string .= "</div>";
             $string .= "</div>";
             $string .= "</div>";
