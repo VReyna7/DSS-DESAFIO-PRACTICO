@@ -16,10 +16,12 @@ $nombreImg = $_FILES['img']['name'];
 $rutaImg = $_FILES['img']['tmp_name'];
 $destino = "../server/img/$nombreImg";
 
-if(empty($codigo) || empty($nombre) || empty($descripcion)){
+if(empty($codigo)||empty($nombre)||empty($descripcion)){
     header('location: ../vista/crearProducto.php?error_log=1');
-}elseif($val->valCod($codigo)){
+}elseif($val->valCod($codigo)==1){
     header('location: ../vista/crearProducto.php?error_log=2');
+}elseif($precio<0 || $existencias<0){
+    header('location: ../vista/crearProducto.php?error_log=3');
 }else{
     move_uploaded_file($rutaImg,$destino);
     $pro->setCod($codigo);

@@ -18,6 +18,8 @@ $destino = "../server/img/$nombreImg";
 
 if(empty($codigo) || empty($nombre) || empty($descripcion)){
     header("location: ../vista/modificarProducto.php?producto=$codigo&error_log=1");
+}elseif($precio<0 || $existencias<0){
+    header('location: ../vista/crearProducto.php?error_log=2');
 }else{
     move_uploaded_file($rutaImg,$destino);
     if(!empty($nombreImg)){
