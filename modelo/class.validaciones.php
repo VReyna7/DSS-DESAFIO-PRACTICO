@@ -10,6 +10,18 @@ class Validacion{
             return true;
         }
     }
+    
+    public function veriExistencias($ext){
+        if($ext<0){
+            return true;
+        }
+    }
+
+    public function veriPrecio($pre){
+        if($pre<0){
+            return true;
+        }
+    }
 
 }
 ?>

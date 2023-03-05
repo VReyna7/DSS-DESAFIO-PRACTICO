@@ -30,7 +30,29 @@
         ?>
         <h1>Información Productos </h1>
         <a href="../vista/crearProducto.php" class="crear"><button class="btn btn-primary">Crear Producto</button></a>
-        <?= $pro->verProductos(1)?>
+        <div class="busqueda">
+            <form action="../controlador/ctr.buscar.php" method="POST">
+                <div>
+                    <input type="text" name="busqueda" placeholder="Codigo de producto" class="form-control">
+                </div>
+                <div>
+                    <input type="hidden" name="user" value="admin">
+                    <input type="submit" name="buscar" value="Buscar" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+        <?php
+        if(isset($_GET['busqueda'])){
+            if(empty($pro->buscarProducto($_GET['busqueda'],1))){
+                echo "<p class=\"alert alert-primary\">El codigo del producto no existe</p>" ;
+                echo $pro->verProductos(1);
+            }else{
+                echo $pro->buscarProducto($_GET['busqueda'],1);
+            }
+        }else{
+            echo $pro->verProductos(1);
+        }
+        ?>
     </main>
     <footer class="bg-warning text-center text-lg-start footer">
         <!-- Copyright -->

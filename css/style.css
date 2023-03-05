@@ -1,3 +1,6 @@
+*{
+    overflow: hidden;
+}
 
 .footer{
     position:absolute;

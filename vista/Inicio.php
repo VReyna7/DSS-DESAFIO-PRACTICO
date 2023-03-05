@@ -25,7 +25,29 @@
         <div>
         <h1>Venta de productos </h1>
         </div>
-        <?= $pro->verProductos(0)?>
+        <div class="busqueda">
+            <form action="../controlador/ctr.buscar.php" method="POST">
+                <div>
+                    <input type="text" name="busqueda" placeholder="Nombre del producto" class="form-control">
+                </div>
+                <div>
+                    <input type="hidden" name="user" value="cliente">
+                    <input type="submit" name="buscar" value="Buscar" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+        <?php
+        if(isset($_GET['busqueda'])){
+            if(empty($pro->buscarProducto($_GET['busqueda'],0))){
+                echo "<p class=\"alert alert-primary\">El codigo del producto no existe</p>" ;
+                echo $pro->verProductos(0);
+            }else{
+                echo $pro->buscarProducto($_GET['busqueda'],0);
+            }
+        }else{
+            echo $pro->verProductos(0);
+        }
+        ?>
     </main>
 
     <footer class="bg-warning text-center text-lg-start footer">
